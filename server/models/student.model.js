@@ -33,7 +33,7 @@ const studentSchema = new Schema({
     }],
     enrolledToTeacher:[{
         type:Schema.Types.ObjectId,
-        ref:"teacher"
+        ref:"teacher" 
     }],
     isVerified:{
         type:Boolean,
