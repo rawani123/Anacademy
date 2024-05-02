@@ -57,7 +57,7 @@ const verifyEmail = async (req, res) => {
 
         user.isVerified = true;
         user.verificationToken = null;
-        console.log("done")
+        
         await user.save();
 
         const congratulationContent = successFullVerification(user.name);
