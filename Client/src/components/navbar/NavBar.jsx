@@ -8,9 +8,6 @@ import { Link } from 'react-router-dom'
 //   { name: 'Calendar', href: '#', current: false },
 // ]
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function Navbar() {
   return (
@@ -26,10 +23,10 @@ export default function Navbar() {
                 </Link>
               </div>
               <div className="flex gap-5 text-white">
-                <Link to="signup" className=' border-purple-600 border-2 hover:bg-[#60B3D1] hover:text-white hover:shadow-white hover:shadow-md py-2 px-5 rounded-3xl'>
+                <Link to="/signup" className=' border-purple-600 border-2 hover:bg-[#60B3D1] hover:text-white hover:shadow-white hover:shadow-md py-2 px-5 rounded-3xl'>
                     Signup
                 </Link>
-                <Link to="login" className=' border-purple-600 hover:bg-[#60B3D1] hover:text-white hover:shadow-white hover:shadow-md border-2 py-2 px-14 rounded-3xl'>
+                <Link to="/login" className=' border-purple-600 hover:bg-[#60B3D1] hover:text-white hover:shadow-white hover:shadow-md border-2 py-2 px-14 rounded-3xl'>
                     Login
                 </Link>
               </div>

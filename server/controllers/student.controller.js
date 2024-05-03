@@ -2,6 +2,7 @@ import studentModel from "../models/student.model.js";
 import bcrypt from "bcryptjs";
 import {generateverificationToken,sendVerificationEmail} from "../utils/verifyEmail.js";
 import { successFullVerification } from "../utils/emailTemplate.js";
+import jwt from "jsonwebtoken";
 
 const studentSignup = async (req, res) => {
     try {
@@ -70,5 +71,48 @@ const verifyEmail = async (req, res) => {
     }
 }
 
-export {studentSignup,verifyEmail}; 
+const studentLogin = async (req, res) => {
+    try {
+        const {email, password} = req.body;
+
+        if (!email || !password) {
+            return res.status(400).send({message:"Please fill all the fields",success:false});
+        }
+
+        const student = await studentModel.findOne({email});
+
+        if (!student) {
+            return res.status(400).send({message:"Student does not exist",success:false});
+        }
+
+        const isMatch = await bcrypt.compare(password, student.password);
+
+        if (!isMatch) {
+            return res.status(400).send({message:"Invalid credentials",success:false});
+        }
+
+        if (!student.isVerified) {
+            return res.status(400).send({message:"Please verify your email",success:false});
+        }
+        const token = jwt.sign({id:student._id}, process.env.SECRET_KEY, {expiresIn:"1h"});
+        return res.status(200).send({message:"Student logged in successfully",success:true,token});
+    } catch (error) {
+        return res.status(500).send({message:"Error in student Login",success:false,error:error.message});
+    }
+}
+
+const studentProfile = async (req, res) => {
+    try {
+        const student = await studentModel.findById(req.student.id).select("-password");
+        if (!student) {
+            return res.status(400).send({message:"Student does not exist",success:false});
+        }
+        return res.status(200).send({message:"Student profile fetched successfully",success:true,student});
+    }
+    catch (error) {
+        return res.status(500).send({message:"Error in fetching student profile",success:false,error:error.message});
+    }
+}
+
+export {studentSignup,verifyEmail,studentLogin,studentProfile}; 
 

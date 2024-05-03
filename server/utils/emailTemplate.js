@@ -39,7 +39,7 @@ export const gmailContent = (verificationToken, username) => {
         .btn-verify {
           display: inline-block;
           background-color: #0D6EFD;
-          color: #fff;
+          color: white;
           font-size: 18px;
           text-decoration: none;
           padding: 10px 20px;
@@ -61,7 +61,7 @@ export const gmailContent = (verificationToken, username) => {
         <p>Please take a moment to verify your email for RealTimeEdify, Edit in Real time</p>
         <div style="text-align: center; margin-top: 20px;">
           <h2>Hello ${username},</h2>
-          <p>Slacky300 appreciates your commitment to securing your account. To proceed, kindly click the button below to verify your email:</p>
+          <p>Anacademy appreciates your commitment to securing your account. To proceed, kindly click the button below to verify your email:</p>
           <a href="${process.env.BACKEND_URL}/api/student/verifyemail/${verificationToken}" class="btn-verify">Verify Email</a>
         </div>
       </div>
