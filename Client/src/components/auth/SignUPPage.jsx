@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../navbar/NavBar';
+import { Link } from 'react-router-dom';
 
 const SignUPPage = () => {
   const [formData, setFormData] = useState({
@@ -108,9 +109,9 @@ const SignUPPage = () => {
           {message && <p className="mt-4 text-center text-sm text-white">{message}</p>}
           <p className="mt-10 text-center text-sm text-white">
             Already Registered?{' '}
-            <a href="#" className="font-semibold leading-6 text-blue-800 hover:text-blue-600">
+            <Link to="/login" className="font-semibold leading-6 text-blue-800 hover:text-blue-600">
               Login to your account
-            </a>
+            </Link>
           </p>
         </div>
       </div>
