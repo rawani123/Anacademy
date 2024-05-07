@@ -55,7 +55,7 @@ const LoginPage = () => {
       <div className="flex h-[665px] flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-[#60B3D1]">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
-            Login to your account
+            Login to your Student Account
           </h2>
         </div>
 

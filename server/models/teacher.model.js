@@ -29,7 +29,14 @@ const teacherSchema = new Schema({
     studentEnrolled:[{
         type:Schema.Types.ObjectId,
         ref:"student"
-    }]
+    }],
+    isVerified:{
+        type:Boolean,
+        default:false
+    },
+    verificationToken:{
+        type:String
+    }
 },{timestamps:true});
 
 const teacherModel = model("teacher",teacherSchema);

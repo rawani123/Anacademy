@@ -109,7 +109,7 @@ const SignUPPage = () => {
           {message && <p className="mt-4 text-center text-sm text-white">{message}</p>}
           <p className="mt-10 text-center text-sm text-white">
             Already Registered?{' '}
-            <Link to="/login" className="font-semibold leading-6 text-blue-800 hover:text-blue-600">
+            <Link to="/login-as" className="font-semibold leading-6 text-blue-800 hover:text-blue-600">
               Login to your account
             </Link>
           </p>

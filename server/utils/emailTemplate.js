@@ -141,5 +141,77 @@ export const successFullVerification = (username) => {
     
     `;
   }
+
+  export const gmailContentforTeacher = (verificationToken, username) => {
+    return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Email Verification</title>
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: 'Arial', sans-serif;
+          background-color: #f0f0f0;
+        }
+    
+        .container {
+          max-width: 600px;
+          margin: 20px auto;
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        h1, h2 {
+          color: black;
+          text-align: center;
+        }
+    
+        p {
+          font-size: 16px;
+          color: black;
+          text-align: center;
+        }
+    
+        .btn-verify {
+          display: inline-block;
+          background-color: #0D6EFD;
+          color: white;
+          font-size: 18px;
+          text-decoration: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          border: 2px solid #008080;
+          transition: background-color 0.3s ease-in-out;
+          text-align: center;
+          margin-top: 20px;
+        }
+    
+        .btn-verify:hover {
+          background-color: darkblue;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>Email Verification</h1>
+        <p>Please take a moment to verify your email for RealTimeEdify, Edit in Real time</p>
+        <div style="text-align: center; margin-top: 20px;">
+          <h2>Hello ${username},</h2>
+          <p>Anacademy appreciates your commitment to securing your account. To proceed, kindly click the button below to verify your email:</p>
+          <a href="${process.env.BACKEND_URL}/api/teacher/verifyemail/${verificationToken}" class="btn-verify">Verify Email</a>
+        </div>
+      </div>
+    </body>
+    </html>
+    
+        `;
+  
+  }
   
   
