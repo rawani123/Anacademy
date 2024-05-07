@@ -1,12 +1,12 @@
 import './App.css'
 import { Routes,Route } from 'react-router-dom'
-import LoginPages from './components/auth/LoginPages'
-import SignUPPage from './components/auth/SignUPPage'
+import LoginPages from './components/auth/student/LoginPages'
+import SignUPPage from './components/auth/student/SignUPPage'
 import HomePage from './components/Homepage/HomePage'
 import Optionpage from './components/auth/OptionPage'
-import TeacherSignup from './components/auth/TeacherSignup'
+import TeacherSignup from './components/auth/teacher/TeacherSignup'
 import LoginOption from './components/auth/LoginOption'
-import TeacherLogin from './components/auth/TeacherLogin'
+import TeacherLogin from './components/auth/teacher/TeacherLogin'
 
 
 function App() {

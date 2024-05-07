@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from '../navbar/NavBar';
+import Navbar from '../../navbar/NavBar';
 import { Link } from 'react-router-dom';
 
 const SignUPPage = () => {
