@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../../navbar/NavBar';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const LoginPage = () => {
   // const [message, setMessage] = useState('');
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
